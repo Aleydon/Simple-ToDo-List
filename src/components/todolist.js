@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaPlus } from 'react-icons/fa';
 import './style.css';
 
 
@@ -31,9 +32,13 @@ function TodoList() {
     and finally clear input
     */}
     function handleAddButton(){
-        const data = [...todo, valueInput];
-        setTodo(data);
-        setValueInput('');
+        if(valueInput != ''){
+            const data = [...todo, valueInput];
+            setTodo(data);
+            setValueInput('');
+        }else{
+            alert('Please, insert something');
+        }
     }
 
 
@@ -49,7 +54,7 @@ function TodoList() {
             <div className="container-items">
                 <div>
                         <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
-                        <button onClick={handleAddButton} className="btnAdd">Add Item</button>
+                        <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" /></button>
                     </div>
 
                 <div className="list-items">  
