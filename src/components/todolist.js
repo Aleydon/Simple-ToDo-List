@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import './style.css';
 
 
 
@@ -39,27 +39,33 @@ function TodoList() {
 
 
   return(
-      <div>
+      <div className="box">
           <div>
               <header>
                   <h2>To-Do List</h2>
               </header>
           </div>
 
-           <div>
-                <input type="text" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
-                <button onClick={handleAddButton}>Add Todo List</button>
-            </div>
-          <ul>
-              {todo.map((item) => {
-                  return(
-                    <div>
-                        <li key={item}>{item}</li>
-                        {/* <button>X</button> */}
+            <div className="container-items">
+                <div>
+                        <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
+                        <button onClick={handleAddButton} className="btnAdd">Add Item</button>
                     </div>
-                  );
-              })}
-          </ul>
+
+                <div className="list-items">  
+                    {todo.map((item) => {
+                                return(
+                                    <div className="box2">
+                                        <ul>
+                                            <li key={item}>{item}</li>
+                                            <button>Edit</button>
+                                            <button>Remove</button>
+                                        </ul>
+                                    </div>
+                            );
+                    })}          
+                </div>
+          </div>
       </div>
   )
 }
