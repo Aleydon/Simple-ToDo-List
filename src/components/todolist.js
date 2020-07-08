@@ -53,25 +53,24 @@ function TodoList() {
 
             <div className="container-items">
                 <div>
-                        <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
-                        <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" /></button>
-                    </div>
+                    <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
+                    <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" /></button>
+                </div>
 
                 <div className="list-items">  
                     {todo.map((item) => {
                                 return(
                                     <div className="box2">
                                         <ul>
-                                            <li key={item}>{item}</li>
-                                            <button>Edit</button>
+                                            <li key={item}> {item}</li>
                                             <button>Remove</button>
                                         </ul>
                                     </div>
                             );
                     })}          
                 </div>
-          </div>
-      </div>
+            </div>
+      </div>    
   )
 }
 

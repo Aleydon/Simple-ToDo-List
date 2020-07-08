@@ -24,6 +24,16 @@ ul{
 .list-items{
     background-color: #E3E3E3;
     margin-top: 2px;
+    display: flex;
+    flex-direction: column;
 }
+
+
+
+.box2{
+    border-top: 2px white solid;
+}
+ 
+
 
 
