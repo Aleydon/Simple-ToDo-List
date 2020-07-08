@@ -54,7 +54,7 @@ function TodoList() {
             <div className="container-items">
                 <div>
                     <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
-                    <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" /></button>
+                    <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" size={ 10 } /></button>
                 </div>
 
                 <div className="list-items">  
@@ -63,7 +63,8 @@ function TodoList() {
                                     <div className="box2">
                                         <ul>
                                             <li key={item}> {item}</li>
-                                            <button>Remove</button>
+                                            <br />
+                                            <button onProgress={() => {}}>Remove</button>
                                         </ul>
                                     </div>
                             );
