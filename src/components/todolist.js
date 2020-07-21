@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaTrash } from 'react-icons/fa';
 import './style.css';
 
 
@@ -20,7 +20,7 @@ function TodoList() {
 
 
 
-      // Set values in Local Storage
+    // Set values in Local Storage
       useEffect(() => {
         localStorage.setItem('todo', JSON.stringify(todo));
     }, [todo]);
@@ -32,7 +32,7 @@ function TodoList() {
     and finally clear input
     */}
     function handleAddButton(){
-        if(valueInput != ''){
+        if(valueInput !== ''){
             const data = [...todo, valueInput];
             setTodo(data);
             setValueInput('');
@@ -40,6 +40,16 @@ function TodoList() {
             alert('Please, insert something');
         }
     }
+
+
+
+    //Delete Task
+    function removeItem(index){
+        const newData = todo;
+        newData.splice(index, 1);
+        setTodo([ ...newData ]);
+    }
+
 
 
 
@@ -53,8 +63,8 @@ function TodoList() {
 
             <div className="container-items">
                 <div>
-                    <input type="text"  placeholder="Type Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
-                    <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" size={ 10 } /></button>
+                    <input type="text"  placeholder="Type Task Here" value={valueInput} onChange={(event) => {setValueInput(event.target.value)}} />
+                    <button onClick={handleAddButton} className="btnAdd">Add Item <FaPlus color="green" size={10} /></button>
                 </div>
 
                 <div className="list-items">  
@@ -64,7 +74,7 @@ function TodoList() {
                                         <ul>
                                             <li key={item}> {item}</li>
                                             <br />
-                                            <button onProgress={() => {}}>Remove</button>
+                                            <button onClick={(index) => removeItem(index)}><FaTrash color="red" size={10} /> Remove</button>
                                         </ul>
                                     </div>
                             );
