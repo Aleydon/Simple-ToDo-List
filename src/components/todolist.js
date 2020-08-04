@@ -37,7 +37,7 @@ function TodoList() {
             setTodo(data);
             setValueInput('');
         }else{
-            alert('Please, insert something');
+                alert('Please, insert something');
         }
     }
 
@@ -72,9 +72,7 @@ function TodoList() {
                                 return(
                                     <div className="box2">
                                         <ul>
-                                            <li key={item}> {item}</li>
-                                            <br />
-                                            <button onClick={(index) => removeItem(index)}><FaTrash color="red" size={10} /> Remove</button>
+                                            <li key={item}> {item} <button  onClick={(index) => removeItem(index)}><FaTrash color="red" size={10} /> Remove</button></li>
                                         </ul>
                                     </div>
                             );

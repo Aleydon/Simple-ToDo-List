@@ -32,8 +32,9 @@ ul{
 
 .box2{
     border-top: 2px white solid;
+    display: flex;
 }
- 
+
 
 
 
