@@ -3,11 +3,9 @@
 ![alt text](https://github.com/Aleydon/Simple-ToDo-List/blob/master/first_shot.png)
 
 
-
 ### :computer: This application use LocalStorage :computer: 
 
 ![alt text](https://github.com/Aleydon/Simple-ToDo-List/blob/master/second_shot.png)
-
 
 
 ### :heavy_exclamation_mark: Get Started
