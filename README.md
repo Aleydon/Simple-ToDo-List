@@ -8,7 +8,8 @@
 ### This application use LocalStorage 
 
 
-https://github.com/Aleydon/Simple-ToDo-List/blob/master/second_shot.png
+![alt text](https://github.com/Aleydon/Simple-ToDo-List/blob/master/second_shot.png)
+
 
 
 
